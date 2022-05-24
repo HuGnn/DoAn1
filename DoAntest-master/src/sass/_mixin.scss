@@ -1,0 +1,30 @@
+$XS: 480px;
+$SM: 810px;
+$MD: 1024px;
+$XL: 1170px;
+
+// media queries
+
+@mixin Responsive($canvas) {
+  @if $canvas == XS {
+    @media only screen and (max-width: $XS) {
+      // <480
+      @content;
+    }
+  } @else if $canvas == SM {
+    @media only screen and (max-width: $SM) {
+      // 480<x<768
+      @content;
+    }
+  } @else if $canvas == MD {
+    @media only screen and (max-width: $MD) {
+      //768<x<1024
+      @content;
+    }
+  } @else if $canvas == XL {
+    @media only screen and (max-width: $XL) {
+      //1024<<1170
+      @content;
+    }
+  }
+}

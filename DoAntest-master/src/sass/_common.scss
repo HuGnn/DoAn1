@@ -1,0 +1,236 @@
+.pagination {
+  display: inline-flex !important;
+}
+// .page-item.active .page-link {
+//   background-color: #d0a772;
+//   border-color: #d0a772;
+// }
+// .page-link {
+//   color: #d0a772;
+// }
+.modal__container {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  img {
+    width: 25%;
+    object-fit: contain;
+  }
+  &-right {
+    width: 70%;
+    font-size: 1rem;
+
+    p {
+      margin: 0;
+      &:nth-child(1) {
+        font-size: 1.2rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #e58c19;
+      }
+    }
+  }
+}
+.buttons_added {
+  opacity: 1;
+  display: inline-block;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  white-space: nowrap;
+  vertical-align: top;
+}
+.is-form {
+  overflow: hidden;
+  position: relative;
+  background-color: #f9f9f9;
+  height: 2.2rem;
+  width: 1.9rem;
+  padding: 0;
+  text-shadow: 1px 1px 1px #fff;
+  border: 1px solid #ddd;
+}
+.is-form:focus,
+.input-text:focus {
+  outline: none;
+}
+.is-form.minus {
+  border-radius: 4px 0 0 4px;
+}
+.is-form.plus {
+  border-radius: 0 4px 4px 0;
+}
+.input-qty {
+  background-color: #fff;
+  height: 2.2rem;
+  width: 3rem;
+  text-align: center;
+  font-size: 1rem;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  padding: 0;
+}
+.input-qty::-webkit-outer-spin-button,
+.input-qty::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#cart {
+  display: inline;
+  position: relative;
+  span {
+    position: absolute;
+    top: -15px;
+    right: 0px;
+    background-color: #e48c19;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    padding: 0rem 0.3rem;
+    font-size: 0.8rem;
+    border: 1px solid white;
+  }
+}
+.card__content {
+  font-size: 1rem;
+}
+.card-body {
+  table {
+    max-height: 60vh;
+    overflow: hidden;
+    tr {
+      th,
+      td {
+        text-align: center;
+        h5 {
+          font-weight: 600;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+#image-cart {
+  width: 150px;
+  height: 120px;
+  object-fit: cover;
+}
+.login {
+  position: relative;
+  font-size: 1rem;
+  color: white;
+  &:hover {
+    .sub__avt {
+      visibility: inherit;
+    }
+  }
+  .sub__avt {
+    visibility: hidden;
+    position: absolute;
+    top: 115%;
+    right: 0;
+    width: 180px;
+    padding: 0.5rem 0;
+    background-color: #d0a772;
+    text-align: center;
+    border-radius: 5px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -12%;
+      left: 0;
+      height: 10px;
+      width: 100%;
+    }
+    &-item {
+      cursor: pointer;
+      &:hover {
+        // background-color: #e48c19;
+        opacity: 0.4;
+      }
+    }
+  }
+}
+.avt {
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 35px;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.ps-section__header {
+  padding-bottom: 30px;
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+}
+.ps-table--wishlist thead {
+  font-size: 1.3rem;
+}
+.ps-table--wishlist thead tr th {
+  background-color: #f2f2f2;
+  color: #000;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+.ps-table--wishlist tbody tr td {
+  font-size: 1.5rem;
+  padding: 30px 10px;
+  vertical-align: middle;
+}
+.ps-table--wishlist tbody tr td {
+  padding: 10px;
+  text-align: center;
+}
+.ps-btn,
+button.ps-btn {
+  background-color: #4267b2;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 15px 45px;
+  transition: all 0.4s ease;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.ps-btn--sm,
+button.ps-btn--sm {
+  font-size: 1.2rem;
+  padding: 0.5rem 2rem;
+}
+.ps-btn--small {
+  padding: 0.5rem 0.75rem;
+}
+.ps-btn,
+button.ps-btn {
+  color: #fff;
+}
+.table > :not(:first-child) {
+  border-top: none !important;
+}
+.customer-order-detail {
+  font-size: 1.3rem;
+  h5 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+  }
+}
