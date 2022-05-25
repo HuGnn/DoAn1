@@ -14,13 +14,13 @@ import CommonLayout from '../layouts/commonLayout.jsx';
 
 const type_option = {
 	newest: {
-		label: 'Đồ Nam',
-	},
-	bestseller: {
 		label: 'Đồ Nữ',
 	},
+	bestseller: {
+		label: 'Đồ Nam',
+	},
 	popular: {
-		label: 'Đồ Cho Trẻ',
+		label: 'Đồ Trẻ Nhỏ',
 	},
 };
 

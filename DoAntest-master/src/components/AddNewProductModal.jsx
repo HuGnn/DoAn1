@@ -6,15 +6,15 @@ import * as yup from "yup";
 
 const TYPE_OPTION = [
   {
-    label: "Đồ Nam",
+    label: "Đồ Nữ",
     value: "newest",
   },
   {
-    label: "Đồ Nữ",
+    label: "Đồ Nam",
     value: "bestseller",
   },
   {
-    label: "Đồ Cho Trẻ",
+    label: "Đồ Trẻ Nhỏ ",
     value: "popular",
   },
 ];

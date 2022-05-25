@@ -17,9 +17,16 @@ const arrImage = [sliderImg.one, sliderImg.two, sliderImg.three];
 const filter = [
   { id: 1, categoryName: "Đồ Nam", label: "bestseller" },
   { id: 2, categoryName: "Đồ Nữ", label: "new" },
-  { id: 3, categoryName: "Đồ Cho Trẻ", label: "popular" },
+  { id: 3, categoryName: "Đồ Trẻ Nhỏ", label: "popular" },
 ];
-
+const dataProduct = [
+  { img: productImg.product_one, name: "Special Lunch 1", price: "$15.79" },
+  { img: productImg.product_one, name: "Special Lunch 1", price: "$15.79" },
+  { img: productImg.product_one, name: "Special Lunch 1", price: "$15.79" },
+  { img: productImg.product_one, name: "Special Lunch 1", price: "$15.79" },
+  { img: productImg.product_one, name: "Special Lunch 1", price: "$15.79" },
+  { img: productImg.product_one, name: "Special Lunch 1", price: "$15.79" },
+];
 
 export default function HomePage() {
   const content = " Rẻ như bèo, nghèo cũng có tiền mua. ";

@@ -16,7 +16,7 @@ import {
 // } from "../redux/slice/home";
 
 export function MenuBox(
-  { filter, items, children, homeFil, handleOpenModal },
+  { filter, items, children, homeFil, handleOpenModal, setTotal },
   ref
 ) {
   const currentFilter = useSelector(getCurrentFilter);
@@ -25,6 +25,9 @@ export function MenuBox(
   const [newest, setNewest] = useState([]);
   const [popular, setPopular] = useState([]);
   const [currentItems, setCurrentItems] = useState([]);
+  const [totalBest, setTotalBest] = useState(0);
+  const [totalNewest, setTotalNewest] = useState(0);
+  const [totalPop, setTotalPop] = useState(0);
 
   const dispatch = useDispatch();
   const handleClickFilter = (data) => {
@@ -45,13 +48,19 @@ export function MenuBox(
     setBestSell(best.data.data);
     setNewest(news.data.data);
     setPopular(pop.data.data);
+    setTotalBest(best.data.total)
+    setTotalNewest(news.data.total)
+    setTotalPop(pop.data.total)
     // setCurrentItems(best.data.data);
     if (currentSelected === "bestsell") {
       setCurrentItems(best.data.data);
+      setTotal && setTotal(best.data.total)
     } else if (currentSelected === "newest") {
       setCurrentItems(news.data.data);
+      setTotal &&  setTotal(news.data.total)
     } else {
       setCurrentItems(pop.data.data);
+      setTotal &&  setTotal(pop.data.total)
     }
   };
 
@@ -64,13 +73,24 @@ export function MenuBox(
   }, []);
 
   useEffect(() => {
-    if (currentSelected === "bestsell") {
-      setCurrentItems(bestSell);
-    } else if (currentSelected === "newest") {
-      setCurrentItems(newest);
-    } else {
-      setCurrentItems(popular);
+    if(setTotal)
+    {
+      requestApi({page:1});
     }
+    else
+    {
+      if (currentSelected === "bestsell") {
+        setCurrentItems(bestSell);
+        setTotal && setTotal(totalBest)
+      } else if (currentSelected === "newest") {
+        setCurrentItems(newest);
+        setTotal && setTotal(totalNewest)
+      } else {
+        setCurrentItems(popular);
+        setTotal && setTotal(totalPop)
+      }
+    }
+    
   }, [currentSelected]);
 
   return (
@@ -113,19 +133,19 @@ export function MenuBox(
                   className={currentSelected === "bestsell" ? "active" : ""}
                   onClick={() => handleClickHomeFilter("bestsell")}
                 >
-                  Đồ Nữ
+                  Đồ Nam
                 </button>
                 <button
                   className={currentSelected === "newest" ? "active" : ""}
                   onClick={() => handleClickHomeFilter("newest")}
                 >
-                  Đồ Nam
+                  Đồ Nữ
                 </button>
                 <button
                   className={currentSelected === "popular" ? "active" : ""}
                   onClick={() => handleClickHomeFilter("popular")}
                 >
-                  Đồ Cho Trẻ
+                  Đồ Trẻ Nhỏ
                 </button>
               </div>
             </div>

@@ -10,13 +10,13 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const type_option = {
 	newest: {
-		label: 'Đồ Nam',
+		label: 'Mới nhất',
 	},
 	bestseller: {
-		label: 'Đồ Nữ',
+		label: 'Nổi bật',
 	},
 	popular: {
-		label: 'Đồ Cho Trẻ',
+		label: 'Phổ biến',
 	},
 };
 

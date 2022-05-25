@@ -51,7 +51,7 @@ export default function MenuPage() {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
   const currentPage = useSelector(getCurrentPage);
-  const total = useSelector(getTotal);
+  // const total = useSelector(getTotal);
   const category = useSelector(getCategory);
   const listItem = useSelector(getAllItem);
   const currentItem = useSelector(getCurrentItem);
@@ -59,14 +59,15 @@ export default function MenuPage() {
   const filter = useSelector(getFilter);
   const [sort, setSort] = useState(undefined);
   const [page, setPage] = useState(1);
+  const [total, setTotal] = useState(0)
   const ref = React.useRef(null);
 
   const getTotalPage = (total, size) => {
     const total_page = Math.floor(total / size);
-    return total_page * size > total ? total_page + 1 : total_page;
+    return total_page * size < total ? total_page + 1 : total_page;
   };
 
-  const totalPage = getTotalPage(currentPage, total);
+  const totalPage = getTotalPage(total, 6);
 
   const handleClickPagination = (data) => {
     const page = (data < 1 && 1) || (data > totalPage && totalPage) || data;
@@ -117,6 +118,7 @@ export default function MenuPage() {
         items={listItem}
         handleOpenModal={handleOpenModal}
         ref={ref}
+        setTotal={setTotal}
       >
         <div className="row py-3">
           <div className="col col-6 search">
